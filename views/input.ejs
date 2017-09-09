@@ -1,0 +1,41 @@
+<% include head %>
+<div style="max-width:600px; margin:0 auto;">
+  <h1 class="text-center">请输入你的信息!!</h1>
+  <form class="" action="/input" method="post">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;</span>
+      <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" name="name">
+    </div><br>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Password</span>
+    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password">
+  </div>
+  <br>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;</span>
+    <input type="email" class="form-control" placeholder="Enter your email address" aria-describedby="basic-addon2" name="email" list="email-lists">
+    <datalist id="email-lists">
+      <option>xxx@123.com</option>
+      <option>xxx@456.com</option>
+      <option>xxx@789.com</option>
+    </datalist>
+  </div><br>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;City&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <input type="text" class="form-control" placeholder="City" aria-describedby="basic-addon1" name="city">
+  </div><br>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QQ&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <input type="text" class="form-control" placeholder="QQ" aria-describedby="basic-addon1" name="qq">
+  </div><br>
+
+  <button type="submit" style="display:block;margin:0 auto;width:100%; height:35px;">提交</button>
+  </form>
+
+
+</div>
+<% include footer %>

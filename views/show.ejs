@@ -1,0 +1,50 @@
+<% include head %>
+<div style="max-width:1200px; margin: 0 auto; font-size:26px;">
+  <table class="table table-bordered table-hover">
+    <tr class="active">
+      <th  class="text-center">姓名</th>
+      <th class="text-center">密码</th>
+      <th class="text-center">邮箱</th>
+      <th class="text-center">城市</th>
+      <th class="text-center">QQ</th>
+      <th class="text-center">操作</th>
+    </tr>
+
+
+
+    <% news.forEach(function(info){ %>
+      <tr class="text-center">
+        <td><%= info.name %></td>
+        <td><%= info.password %></td>
+        <td><%= info.email %></td>
+        <td><%= info.city %></td>
+        <td><%= info.qq %></td>
+        <td>
+          <form method="get" action="/del" style="display:inline-block;">
+            <input type="hidden" name="id" value=<%= info.id %>>
+            <button type="submit">删除</button>
+          </form>&nbsp;&nbsp;<form method="get" action="/update" style="display:inline-block;">
+            <input type="hidden" name="id" value=<%= info.id %>>
+
+            <button type="submit">修改</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </table>
+
+</div>
+
+<script type="text/javascript">
+  var socket = io();
+  socket.on("sbb",function(msg){
+    $('.active').after(
+      '<tr class="text-center"><td>'+ msg.name +'</td><td>'+ msg.password +'</td><td>'+ msg.email +'</td><td>'+ msg.city +'</td><td>'+ msg.qq +'</td><td>'+
+          '<button type="button" ><a href="/change?id='+ msg._id + '">修改</a>'+
+          '</button> <button type="button" ><a href="/del?id='+ msg._id +'\" onClick="return confirm(\'确定删除?\');\">删除</a></button></td></tr>'
+    );
+  });
+
+</script>
+
+<% include footer %>
