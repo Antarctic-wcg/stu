@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var url = 'mongodb://10.198.1.213:27017/stu';
+var url = 'mongodb://127.0.0.1:27017/stu';
 mongoose.connect(url);
 
 var db = mongoose.connection;
