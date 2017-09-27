@@ -20,9 +20,9 @@ router.post('/', function(req, res, next){
     { _id: req.body.id},
     {$set: req.body},function(err){
       console.log(err);
+      res.redirect('/show');
     }
   );
-  res.redirect('/show');
 });
 
 module.exports = router;
