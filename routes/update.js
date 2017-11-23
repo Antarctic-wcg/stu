@@ -4,15 +4,16 @@ var assert = require('assert');
 var db = require('../db');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
 
-  db.user.find({_id: req.query.id}, function(err, doc){
+  db.user.find({_id: req.params.id}, function(err, doc){
     assert.equal(null, err);
     res.render('update', { title: '学生信息管理', doc: doc })
   })
 
   // res.render('update', { title: '学生信息管理', doc: req.query });
 });
+
 
 router.post('/', function(req, res, next){
   console.log(req.body.id);

@@ -5,11 +5,11 @@ var db = require('../db');
 
 
 router.get('/', function(req, res, next) {
-  // db.user.find({}, function(err, doc){
-    // assert.equal(null, err);
-    // res.json(doc);
-    res.render('show', { title: '学生信息管理' });
-  // })
+  db.user.find({}, function(err, doc){
+    assert.equal(null, err);
+    res.json(doc);
+    // res.render('show', { title: '学生信息管理' });
+  }).sort({_id:-1})
 
 });
 
