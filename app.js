@@ -12,7 +12,7 @@ var show = require('./routes/show');
 var del = require('./routes/del');
 var update = require('./routes/update');
 var api_info = require('./routes/api_info');
-var api = require('./routes/api');
+
 
 
 
@@ -37,7 +37,7 @@ app.use('/show', show);
 app.use('/del', del);
 app.use('/update', update);
 app.use('/api_info', api_info);
-app.use('/api', api);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

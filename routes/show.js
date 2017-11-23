@@ -4,24 +4,10 @@ var assert = require('assert');
 var db = require('../db');
 
 
-// router.get('/', function(req, res, next) {
-//   // db.user.find({}, function(err, doc){
-//     // assert.equal(null, err);
-//     // res.json(doc);
-//
-//     res.render('show', { title: '学生信息管理' });
-//   // })
-//
-// });
-
 router.get('/', function(req, res, next) {
-  db.user.find({}, function(err, doc){
-    assert.equal(null, err);
-    res.header("Access-Control-Allow-Origin", "*");
-    res.json(doc);
-  }).sort({_id:-1})
-
+    res.render('show', { title: '学生信息管理' });
 });
+
 
 
 module.exports = router;
