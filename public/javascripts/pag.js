@@ -1,5 +1,5 @@
 $(function(){
-  htmlobj=$.ajax({url:"http://127.0.0.1:3000/api_info",async:false});
+  htmlobj=$.ajax({url:"http://127.0.0.1:3000/api_info"});
   var info = htmlobj.responseJSON;
   var pags = Math.ceil(info.length/5);
   var pag = 1;
